@@ -26,6 +26,8 @@ _This application will allow an office administrator to track patients in a doct
 | 2. Saves doctors in a database. []|
 | 3. Shows all doctors. []|
 | 4. Finds a doctor by id from a database. []|
+| 5. Updates a doctor in a database. []|
+| 6. Deletes a doctor from a database. []|
 
 | 5. Assigns a doctor to a patient. []|
 | 6. Creates a new patient with a name, id, and birthdate.[]|
