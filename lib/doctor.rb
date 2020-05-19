@@ -32,4 +32,7 @@ attr_accessor(:id, :name, :specialty)
     @id = result.first().fetch("id").to_i
   end
 
+  # doctor = DB.exec("SELECT * FROM doctors WHERE id = #{id};").first
+  #   # name = doctor.fetch("name")
+
 end

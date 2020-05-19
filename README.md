@@ -24,12 +24,15 @@ _This application will allow an office administrator to track patients in a doct
 |-------------------------------|
 | 1. Creates a new doctor with a name, id, and specialty. []|
 | 2. Saves doctors in a database. []|
-| 3. Assigns a doctor to a patient. []|
-| 4. Creates a new patient with a name, id, and birthdate.[]|
-| 5. Saves patients in a database.[]|
-| 6. See the list of patients that have been assigned to a doctor []|
-| 7.  []|
-| 8.  []|
+| 3. Shows all doctors. []|
+| 4. Finds a doctor by id from a database. []|
+
+| 5. Assigns a doctor to a patient. []|
+| 6. Creates a new patient with a name, id, and birthdate.[]|
+| 7. Saves patients in a database.[]|
+| 8. See the list of patients that have been assigned to a doctor []|
+| 9.  []|
+| 10.  []|
 
 
 ## Known Bugs

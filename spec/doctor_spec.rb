@@ -5,6 +5,7 @@ require 'pry'
 require 'spec_helper'
 
 describe ('Doctor') do
+  
   describe('initialize') do
     it('creates a doctor') do
       doctor1 = Doctor.new({name: "chi", id: nil, specialty: "allergists"})
@@ -14,9 +15,9 @@ describe ('Doctor') do
 
   describe('.all') do
     it('returns and empty array when there are no doctors') do
-    expect(Doctor.all).to(eq[])
+      expect(Doctor.all).to(eq([]))
+    end
   end
-end
 
   describe('#save') do
     it("saves a doctor") do
@@ -36,6 +37,15 @@ end
     end
   end
 
+  describe(".find") do 
+    it("finds a doctor by id") do
+      doctor1 = Doctor.new({name: "chi", id: nil, specialty: "allergists"})
+      doctor1.save
+      doctor2 = Doctor.new({name: "jozy", id: nil, specialty: "parasitologist"})
+      doctor2.save
+      expect(Doctor.find(doctor1.id)).to(eq(doctor1))
+    end
+  end
 
 end
 
