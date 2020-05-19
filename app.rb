@@ -1,7 +1,7 @@
 require('sinatra')
 require('sinatra/reloader')
-require('./lib/album')
-require('./lib/song')
+require('./lib/doctor')
+require('./lib/patient')
 require('pry')
 also_reload('lib/**/*.rb')
 
