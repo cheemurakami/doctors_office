@@ -40,4 +40,9 @@ attr_accessor(:id, :name, :specialty)
     Doctor.new({name: name, id: id, specialty: specialty })
   end
 
+  def update(name)
+    @name = name
+    DB.exec("UPDATE albums SET name = '#{@name}' WHERE id = #{@id};")
+  end
+
 end
