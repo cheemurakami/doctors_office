@@ -1,5 +1,6 @@
 require 'pry'
 
+
 class Doctor
 
 attr_accessor(:id, :name, :specialty)
@@ -11,13 +12,13 @@ attr_accessor(:id, :name, :specialty)
   end
 
   def self.all 
-    returned_doctors = DB.execute("SELECT * FROM doctors;")
+    returned_doctors = DB.exec("SELECT * FROM doctors;")
     doctors = []
     returned_doctors.each() do |doctor|
       name = doctor.fetch("name")
       id = doctor.fetch("id").to_i
       specialty = doctor.fetch("specialty")
-      doctors.push(Doctor.new({name: name, id: id, :specialty: specialty}))
+      doctors.push(Doctor.new({name: name, id: id, specialty: specialty}))
     end
     doctors
   end

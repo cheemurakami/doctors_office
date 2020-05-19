@@ -2,6 +2,7 @@ require 'rspec'
 require 'doctor'
 require 'patient'
 require 'pry'
+require 'spec_helper'
 
 describe ('Doctor') do
   describe('initialize') do
@@ -24,6 +25,14 @@ end
       doctor2 = Doctor.new({name: "jozy", id: nil, specialty: "parasitologist"})
       doctor2.save
       expect(Doctor.all).to eq([doctor1, doctor2])
+    end
+  end
+
+  describe('#==') do
+    it("is the same doctor if it has the same attributes as another doctor") do
+      doctor = Doctor.new({name: "chi", id: nil, specialty: "allergists"})
+      doctor2 = Doctor.new({name: "jozy", id: nil, specialty: "parasitologist"})
+      expect(doctor).to(eq(doctor2))
     end
   end
 
