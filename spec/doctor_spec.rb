@@ -1,7 +1,17 @@
 require 'rspec'
-require 'song'
-require 'album'
+require 'doctor'
+require 'patient'
 require 'pry'
+
+describe ('Doctor') do
+  describe('initialize') do
+    it('creates a doctor') do
+      doctor1 = Doctor.new({name: "chi", id: nil, specialty: "allergists"})
+      expect(doctor1).to eq("")
+    end
+  end
+
+end
 
 # EXAMPLES FOR TESTING 
 # describe '#Class' do

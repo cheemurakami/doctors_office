@@ -2,9 +2,10 @@ require 'pry'
 
 class Doctor
 
-attr_accessor: :id, :name, :specialty
+attr_accessor(:id, :name, :specialty)
 
-def initialize(attributes)
+  def initialize(attributes)
 
 end
 
+end
