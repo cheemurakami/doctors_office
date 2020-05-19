@@ -17,7 +17,7 @@ describe ('Doctor') do
       doctor1.save
       doctor2 = Doctor.new({name: "jozy", id: nil, specialty: "parasitologist"})
       doctor2.save
-      expect(Doctor.all).to eq([doctor1,])
+      expect(Doctor.all).to eq([doctor1, doctor2])
     end
   end
 
