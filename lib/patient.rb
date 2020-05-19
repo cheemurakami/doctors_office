@@ -59,7 +59,7 @@ attr_accessor(:id, :name, :birthdate, :doc_id)
     returned_patients.each() do |patient|
       name = patient.fetch("name")
       id = patient.fetch("id").to_i
-      birthdate =patient.fetch("birthdate")
+      birthdate = patient.fetch("birthdate")
       patients.push(Patient.new({name: name, id: id, birthdate: birthdate, doc_id: doc_id}))
     end
     patients

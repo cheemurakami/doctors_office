@@ -82,6 +82,7 @@ describe ('Patient') do
     it("finds patients for a doctor") do
       patient1 = Patient.new({name: "chi", id: nil, birthdate: nil, doc_id: @doctor.id})
       patient1.save
+      binding.pry
       patient2 = Patient.new({name: "jozy", id: nil, birthdate: nil, doc_id: @doctor.id})
       patient2.save
       expect(Patient.find_by_doctor(@doctor.id)).to eq([patient1, patient2])
