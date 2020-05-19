@@ -23,6 +23,9 @@ attr_accessor(:id, :name, :specialty)
     doctors
   end
 
+  def ==(doctor_to_compare)
+    self.name() == doctor_to_compare.name()
+  end
 
   def save
     result = DB.exec("INSERT INTO doctors (name) VALUES ('#{@name}') RETURNING id;")
