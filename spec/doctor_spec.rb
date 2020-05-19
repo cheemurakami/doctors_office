@@ -56,6 +56,17 @@ describe ('Doctor') do
     end
   end
 
+  describe("#delete") do
+    it("deletes a doctor by id") do
+      doctor1 = Doctor.new({name: "chi", id: nil, specialty: "allergists"})
+      doctor1.save
+      doctor2 = Doctor.new({name: "jozy", id: nil, specialty: "parasitologist"})
+      doctor2.save
+      doctor1.delete
+      expect(Doctor.all)
+    end
+  end
+
 end
 
 # EXAMPLES FOR TESTING 
