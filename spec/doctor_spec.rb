@@ -11,6 +11,12 @@ describe ('Doctor') do
     end
   end
 
+  describe('.all') do
+    it('returns and empty array when there are no doctors') do
+    expect(Doctor.all).to(eq[])
+  end
+end
+
   describe('#save') do
     it("saves a doctor") do
       doctor1 = Doctor.new({name: "chi", id: nil, specialty: "allergists"})
