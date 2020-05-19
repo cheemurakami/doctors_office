@@ -42,7 +42,7 @@ attr_accessor(:id, :name, :specialty)
 
   def update(name)
     @name = name
-    DB.exec("UPDATE albums SET name = '#{@name}' WHERE id = #{@id};")
+    DB.exec("UPDATE doctors SET name = '#{@name}' WHERE id = #{@id};")
   end
 
 end
