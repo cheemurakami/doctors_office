@@ -52,4 +52,8 @@ attr_accessor(:id, :name, :birthdate, :doc_id)
     DB.exec("DELETE FROM patients WHERE id = #{@id};")
   end
 
+  def doctor
+    Doctor.find(@doc_id)
+  end
+  
 end
