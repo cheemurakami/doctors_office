@@ -11,6 +11,17 @@ describe ('Doctor') do
     end
   end
 
+  describe('#save') do
+    it("saves a doctor") do
+      doctor1 = Doctor.new({name: "chi", id: nil, specialty: "allergists"})
+      doctor1.save
+      doctor2 = Doctor.new({name: "jozy", id: nil, specialty: "parasitologist"})
+      doctor2.save
+      expect(Doctor.all).to eq([doctor1,])
+    end
+  end
+
+
 end
 
 # EXAMPLES FOR TESTING 
