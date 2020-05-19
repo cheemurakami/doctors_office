@@ -3,12 +3,13 @@ require 'pry'
 
 class Patient
 
-attr_accessor(:id, :name, :birthdate)
+attr_accessor(:id, :name, :birthdate, :doc_id)
 
   def initialize(attributes)
     @name = attributes.fetch(:name)
     @id = attributes.fetch(:id)
     @birthdate = attributes.fetch(:birthdate)
+    @doc_id = attributes.fetch(:doc_id)
   end
 
   def self.all 
@@ -18,7 +19,8 @@ attr_accessor(:id, :name, :birthdate)
       name = patient.fetch("name")
       id = patient.fetch("id").to_i
       birthdate = patient.fetch("birthdate")
-      patients.push(Patient.new({name: name, id: id, birthdate: birthdate}))
+      doc_id = patient.fetch("doc_id").to_i
+      patients.push(Patient.new({name: name, id: id, birthdate: birthdate, doc_id: doc_id}))
     end
     patients
   end
@@ -37,7 +39,8 @@ attr_accessor(:id, :name, :birthdate)
     name = patient.fetch("name")
     id = patient.fetch("id").to_i
     birthdate = patient.fetch("birthdate")
-    Patient.new({name: name, id: id, birthdate: birthdate })
+    doc_id = patient.fetch("doc_id").to_i
+    Patient.new({name: name, id: id, birthdate: birthdate, doc_id: doc_id })
   end
 
   def update(name)
