@@ -53,6 +53,18 @@ attr_accessor(:id, :name, :birthdate, :doc_id)
     DB.exec("DELETE FROM patients WHERE id = #{@id};")
   end
 
+  def self.find_by_doctor(doc_id)
+    patients = []
+    returned_patients = DB.exec("SELECT * FROM patients WHERE doc_id = #{doc_id};")
+    returned_patients.each() do |patient|
+      name = patient.fetch("name")
+      id = patient.fetch("id").to_i
+      birthdate =patient.fetch("birthdate")
+      patients.push(Patient.new({name: name, id: id, birthdate: birthdate, doc_id: doc_id}))
+    end
+    patients
+  end
+
   def doctor
     Doctor.find(@doc_id)
   end
