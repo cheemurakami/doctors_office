@@ -8,7 +8,7 @@ describe ('Patient') do
   
   describe('initialize') do
     it('creates a patient') do
-      patient1 = patient.new({name: "chi", id: nil, birth_date: nil})
+      patient1 = Patient.new({name: "chi", id: nil, birth_date: nil})
       expect(patient1.birth_date).to eq (nil)
     end
   end
