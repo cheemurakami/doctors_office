@@ -54,7 +54,7 @@ describe ('Patient') do
     it("updates a patient by id") do
       patient1 = Patient.new({name: "chi", id: nil, birthdate: nil, doc_id: @doctor.id})
       patient1.save
-      patient1.update("travis")
+      patient1.update("travis", @doctor.id)
       expect(patient1.name).to(eq("travis"))
     end
   end
@@ -78,19 +78,14 @@ describe ('Patient') do
     end
   end
 
+  describe(".find_by_doctor") do
+    it("finds patients for a doctor") do
+      patient1 = Patient.new({name: "chi", id: nil, birthdate: nil, doc_id: @doctor.id})
+      patient1.save
+      patient2 = Patient.new({name: "jozy", id: nil, birthdate: nil, doc_id: @doctor.id})
+      patient2.save
+      expect(Patient.find_by_doctor(@doctor.id)).to eq([patient1, patient2])
+    end
+  end
+
 end
-
-# EXAMPLES FOR TESTING 
-# describe '#Class' do
-#   before(:each) do
-#     Class.clear()
-#     @class_variable = Class.new()
-#     @class_variable.save()
-#   end
-
-#   describe('method') do
-#     it("describe test here") do
-#       expect(method).to(eq(something))
-#     end
-#   end
-# end

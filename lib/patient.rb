@@ -43,9 +43,10 @@ attr_accessor(:id, :name, :birthdate, :doc_id)
     Patient.new({name: name, id: id, birthdate: birthdate, doc_id: doc_id })
   end
 
-  def update(name)
+  def update(name, doc_id)
     @name = name
-    DB.exec("UPDATE patients SET name = '#{@name}' WHERE id = #{@id};")
+    @doc_id = doc_id
+    DB.exec("UPDATE patients SET name = '#{@name}', doc_id =#{@doc_id} WHERE id = #{@id};")
   end
 
   def delete
@@ -55,5 +56,5 @@ attr_accessor(:id, :name, :birthdate, :doc_id)
   def doctor
     Doctor.find(@doc_id)
   end
-  
+
 end
