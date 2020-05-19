@@ -45,4 +45,8 @@ attr_accessor(:id, :name, :specialty)
     DB.exec("UPDATE doctors SET name = '#{@name}' WHERE id = #{@id};")
   end
 
+  def delete
+    DB.exec("DELETE FROM doctors WHERE id = #{@id};")
+  end
+
 end
