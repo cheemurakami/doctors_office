@@ -47,6 +47,15 @@ describe ('Doctor') do
     end
   end
 
+  describe("#update") do
+    it("updates a doctor by id") do
+      doctor1 = Doctor.new({name: "chi", id: nil, specialty: "allergists"})
+      doctor1.save
+      doctor1.update("travis")
+      expect(doctor1.name).to(eq("travis"))
+    end
+  end
+
 end
 
 # EXAMPLES FOR TESTING 
