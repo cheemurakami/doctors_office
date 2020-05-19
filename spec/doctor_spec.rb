@@ -1,7 +1,7 @@
-require 'rspec'
-require 'doctor'
-require 'patient'
-require 'pry'
+# require 'rspec'
+# require 'doctor'
+# require 'patient'
+# require 'pry'
 require 'spec_helper'
 
 describe ('Doctor') do
