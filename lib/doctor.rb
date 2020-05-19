@@ -32,7 +32,12 @@ attr_accessor(:id, :name, :specialty)
     @id = result.first().fetch("id").to_i
   end
 
-  # doctor = DB.exec("SELECT * FROM doctors WHERE id = #{id};").first
-  #   # name = doctor.fetch("name")
+  def self.find(id)
+    doctor = DB.exec("SELECT * FROM doctors WHERE id = #{id};").first
+    name = doctor.fetch("name")
+    id = doctor.fetch("id").to_i
+    specialty = doctor.fetch("specialty")
+    Doctor.new({name: name, id: id, specialty: specialty })
+  end
 
 end
