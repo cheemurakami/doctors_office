@@ -7,7 +7,7 @@ describe ('Doctor') do
   describe('initialize') do
     it('creates a doctor') do
       doctor1 = Doctor.new({name: "chi", id: nil, specialty: "allergists"})
-      expect(doctor1).to eq("")
+      expect(doctor1.specialty).to eq("allergists")
     end
   end
 
