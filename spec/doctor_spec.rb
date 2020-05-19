@@ -66,6 +66,9 @@ describe ('Doctor') do
       expect(Doctor.all).to eq([doctor2])
     end
   end
+  
+
+  
 
 end
 

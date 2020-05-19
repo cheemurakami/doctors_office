@@ -70,6 +70,14 @@ describe ('Patient') do
     end
   end
 
+  describe('#doctor') do
+    it("finds the doctor a patient belongs to") do
+      patient1 = Patient.new({name: "chi", id: nil, birthdate: nil, doc_id: @doctor.id})
+      patient1.save()
+      expect(patient1.doctor).to(eq(@doctor))
+    end
+  end
+
 end
 
 # EXAMPLES FOR TESTING 
