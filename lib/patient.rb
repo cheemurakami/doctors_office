@@ -1,7 +1,7 @@
 require 'pry'
 
 
-class Doctor
+class Patient
 
 attr_accessor(:id, :name, :birth_date)
 
