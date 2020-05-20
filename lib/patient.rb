@@ -30,7 +30,7 @@ attr_accessor(:id, :name, :birthdate, :doc_id)
   end
 
   def save
-    result = DB.exec("INSERT INTO patients (name) VALUES ('#{@name}') RETURNING id;")
+    result = DB.exec("INSERT INTO patients (name, doc_id) VALUES ('#{@name}', #{@doc_id}) RETURNING id;")
     @id = result.first().fetch("id").to_i
   end
 
@@ -56,6 +56,7 @@ attr_accessor(:id, :name, :birthdate, :doc_id)
   def self.find_by_doctor(doc_id)
     patients = []
     returned_patients = DB.exec("SELECT * FROM patients WHERE doc_id = #{doc_id};")
+    binding.pry
     returned_patients.each() do |patient|
       name = patient.fetch("name")
       id = patient.fetch("id").to_i
